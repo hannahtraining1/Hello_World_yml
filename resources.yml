@@ -1,0 +1,14 @@
+---
+resources:
+  - name: resource-resource
+    type: git
+    source:
+      uri: https://github.com/hannahtraining1/Hello_World_yml.git
+      branch: main
+
+jobs:
+  - name: job-job
+    plan:
+    - get: resource-resource
+    - task: task-task
+      file: resource-resource/hello-world.yml
