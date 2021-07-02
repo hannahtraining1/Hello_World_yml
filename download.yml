@@ -1,0 +1,15 @@
+---
+resources:
+  - name: script-resource
+    type: git
+    source:
+      uri: https://github.com/hannahtraining1/Hello_World_yml
+      branch: main
+
+jobs:
+  - name: script-job
+    plan:
+    - get: script-resource
+      trigger: true
+    - task: script-task
+      file: script-resource/Hello_Friday2.yml
