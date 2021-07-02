@@ -3,12 +3,13 @@ resources:
   - name: resource-resource
     type: git
     source:
-      uri: https://github.com/hannahtraining1/Hello_World_yml.git
-      branch: main
+      uri: ((git-uri))
+      branch: ((git-branch))
 
 jobs:
   - name: job-job
     plan:
     - get: resource-resource
+      trigger: true
     - task: task-task
       file: resource-resource/hello-world.yml
