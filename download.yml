@@ -4,7 +4,7 @@ resources:
     type: git
     source:
       uri: https://github.com/hannahtraining1/Hello_World_yml
-      branch: main
+      branch: dev
 
 jobs:
   - name: script-job
