@@ -1,0 +1,14 @@
+---
+use world;
+select count(countrycode) from city where countrycode = "USA";
+select population, lifeexpectancy from country where name = "argentina";
+select * from country where lifeexpectancy is not null;
+select max(lifeexpectancy) from country where lifeexpectancy=(select * from country where lifeexpectancy is not null) order by lifeexpectancy desc limit 1; 
+select * from city join country on city.ID=country.capital where code="esp";
+select * from countrylanguage join country on countrylanguage.countrycode=country.code where region="southeast asia";
+select * from city where name like "F%" limit 25;
+select count(countrycode) from city join country on country.code=city.countrycode where code="chn";
+select min(population),name from country where population is not null > 0 order by name desc;
+select count(name) from country;
+select name from country order by surfacearea desc limit 10;
+select name from city where countrycode="JPN" order by population desc limit 5;
